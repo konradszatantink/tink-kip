@@ -1,0 +1,7 @@
+POST http://localhost:8082/topics/topicOne
+Content-Type: application/vnd.kafka.json.v2+json
+Accept: application/vnd.kafka.v2+json
+
+{
+  "records":[{"key":"alice","value":{"count":0}},{"key":"alice","value":{"count":1}},{"key":"alice","value":{"count":2}}]
+}

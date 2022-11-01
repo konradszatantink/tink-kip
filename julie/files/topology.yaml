@@ -1,0 +1,13 @@
+context: "main"
+source: "source"
+projects:
+  - name: "Consents"
+    topics:
+      - name: "topicOne"
+        config:
+          replication.factor: "3"
+          num.partitions: "1"
+      - name: "topicTwo"
+        config:
+          replication.factor: "3"
+          num.partitions: "2"
