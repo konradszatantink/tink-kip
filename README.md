@@ -1,9 +1,10 @@
 # Kafka Improvement proposals
+## GOAL: Improving engineering productivity while working with Kafka Infrastructure
 
 ### Engineers voice
 
-- Self service for Kafka Artifacts PROPOSAL: Julie Ops to control topics and acls
-- Easy manual record sending/reading while development PROPOSAL: Kafka Rest Proxy alternatively boostraping tools like kafkacat
+- Self-service for Kafka Artifacts PROPOSAL: Julie Ops to control topics and ACLs
+- Easy manual record sending/reading while development PROPOSAL: Kafka Rest Proxy alternatively boostraping tools like kcat
 - Visibility of configuration PROPOSAL: Rest Proxy V3 API + Julie Ops
 - More stable Burrow metrics unstable PROPOSAL: Can investigate
 
