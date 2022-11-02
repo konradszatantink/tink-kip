@@ -1,0 +1,4 @@
+POST http://localhost:8082/consumers/consumer1/instances/consumer1/subscription
+Content-Type: application/vnd.kafka.protobuf.v2+json
+
+{"topics":["topicOne"]}

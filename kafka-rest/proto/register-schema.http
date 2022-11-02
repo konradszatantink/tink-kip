@@ -1,0 +1,7 @@
+POST http://localhost:8081/subjects/topicOne-value/versions
+Content-Type: application/vnd.schemaregistry.v1+json
+
+{
+  "schemaType": "PROTOBUF",
+  "schema": "syntax = \"proto3\";\npackage com.tink;\n\nmessage Test {\n  int32 other_id = 1;\n}\n"
+}

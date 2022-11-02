@@ -95,9 +95,26 @@ services:
       - zoo1
       - zoo2
       - zoo3
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:7.2.1
+    hostname: schema-registry
+    container_name: schema-registry
+    ports:
+      - "8081:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka1:19092
+      SCHEMA_REGISTRY_KAFKASTORE_LISTENERS: http://0.0.0.0:8081
+      SCHEMA_REGISTRY_DEBUG: "true"
+    depends_on:
+      - kafka1
+      - kafka2
+      - kafka3
+
   kafka-rest:
-    image: confluentinc/cp-kafka-rest:latest
-    container_name: kafka-rest-1
+    image: confluentinc/cp-kafka-rest:7.2.1
+    container_name: kafka-rest
     depends_on:
       - kafka1
       - kafka2
@@ -107,6 +124,6 @@ services:
     environment:
       KAFKA_REST_HOST_NAME: localhost
       KAFKA_REST_LISTENERS: http://0.0.0.0:8082
-      #KAFKA_REST_SCHEMA_REGISTRY_URL: 192.168.100.14:8081
+      KAFKA_REST_SCHEMA_REGISTRY_URL: http://schema-registry:8081
       KAFKA_REST_ZOOKEEPER_CONNECT: zoo1:2181,zoo2:2182,zoo3:2183
       KAFKA_REST_BOOTSTRAP_SERVERS: kafka1:19092,kafka2:19093,kafka3:19094

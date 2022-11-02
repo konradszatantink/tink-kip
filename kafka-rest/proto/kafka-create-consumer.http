@@ -1,0 +1,4 @@
+POST http://localhost:8082/consumers/consumer1
+Content-Type: application/vnd.kafka.json.v2+json
+
+{"name": "consumer1", "format": "protobuf", "auto.offset.reset": "earliest"}
